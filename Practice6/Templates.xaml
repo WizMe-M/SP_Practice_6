@@ -1,0 +1,22 @@
+﻿<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style x:Key="SampleButton" TargetType="{x:Type Button}">
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Width" Value="200"/>
+        <Setter Property="FontFamily" Value="Calibri"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Background" Value="Gainsboro"/>
+    </Style>
+    
+    <Style x:Key="ConnectedArduino" TargetType="Button" BasedOn="{StaticResource SampleButton}">
+        <Setter Property="Background" Value="ForestGreen"/>
+    </Style>
+    
+    <Style x:Key="DisconnectedArduino" TargetType="Button" BasedOn="{StaticResource SampleButton}">
+        <Setter Property="Background" Value="DarkRed"/>
+    </Style>
+    
+</ResourceDictionary>

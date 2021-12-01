@@ -1,0 +1,69 @@
+﻿<Window x:Class="Practice6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practice6"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="300" 
+        Width="500"
+        Closed="MainWindow_OnClosed" 
+        ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary Source="Templates.xaml"/>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <ComboBox
+            Name="PortNamesComboBox"
+            SelectionChanged="PortNamesComboBox_OnSelectionChanged"
+            Height="30"
+            FontFamily="Calibri"
+            FontSize="16"
+            Margin="10"
+            IsEnabled="False"/>
+
+        <Button
+            Name="FindPortsButton"
+            Click="FindPortsButton_OnClick" 
+            Style="{StaticResource SampleButton}"
+            Content="Найти"
+            Width="100"
+            Grid.Row="0"
+            Grid.Column="1"/>
+
+        <Button
+            Name="ConnectPortButton"
+            Click="ConnectPortButton_Click"
+            Style="{StaticResource SampleButton}"
+            Content="Подключиться"
+            IsEnabled="False"
+            Grid.Row="0" 
+            Grid.Column="2"/>
+        
+        <!--нужно генерировать при подключении к порту?-->
+        <Grid 
+            x:Name="ConnectedPortGrid"
+            Visibility="Collapsed"
+            Grid.ColumnSpan="3" 
+            Grid.Column="0"
+            Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+        </Grid>
+    </Grid>
+</Window>
