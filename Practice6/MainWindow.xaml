@@ -53,7 +53,6 @@
             Grid.Row="0" 
             Grid.Column="2"/>
         
-        <!--нужно генерировать при подключении к порту?-->
         <Grid 
             x:Name="ConnectedPortGrid"
             Visibility="Collapsed"
